@@ -19,7 +19,7 @@ body {
 @font-face {
     font-family: 'icomoon';
     src: url('font/icomoon.woff2') format('woff2'),
-    url('font/icomoon.woff') format('woff');
+         url('font/icomoon.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -219,8 +219,8 @@ body {
     transform: scale(1);
 }
 .nav-list__icon {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
+    /* Use !important to prevent issues with browser extensions that change fonts */
+    font-family: icomoon !important;
     font-size: 0.75em;
     font-style: normal;
     font-variant: normal;
@@ -229,8 +229,6 @@ body {
     margin-left: 0.5em;
     speak: none;
     text-transform: none;
-
-    /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -800,8 +798,7 @@ body {
     color: #666;
     flex: 0 0 auto;
     font-family: Sarala, sans-serif;
-    margin: 0;
-    margin-left: 3em;
+    margin: 0 0 0 3em;
     padding: 0;
     text-transform: uppercase;
 
