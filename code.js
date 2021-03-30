@@ -8,14 +8,14 @@ window.onscroll = logoShow;
 
 function heightCalculating () {
     return document.getElementsByClassName("header-background-container")[0].offsetHeight;
-};
+}
 function logoShow () {
     if (document.documentElement.scrollTop > limitHeight) {
         logo.classList.add("nav__logo_show");
     } else {
         logo.classList.remove("nav__logo_show");
     }
-};
+}
 
 
 /*                  Отображение/сокрытие боковой навигации                  */
@@ -34,12 +34,12 @@ function sideNavShow (event) {
             document.body.classList.remove("open-nav");
         }
     }
-};
+}
 function widthChange () {
     if (document.body.classList.contains("open-nav") && document.body.clientWidth > 991) {
         document.body.classList.remove("open-nav");
     }
-};
+}
 
 
 /*                  Scroll при нажатии на ссылку                  */
@@ -53,7 +53,7 @@ seeBuyingOptions.addEventListener("click", scroll);
 function scroll(event) {
     event.preventDefault();
     window.scrollBy({top: elementToScroll.getBoundingClientRect()["top"]-80, behavior: "smooth"});
-};
+}
 
 
 /*                  Отображение/сокрытие модального окна                  */
@@ -79,7 +79,7 @@ function displayModal (event) {
             document.documentElement.style.overflow = "";
         }
     }
-};
+}
 function modalConstructor (event) {
     let product = event.target.getAttribute("data-product");
     if (lastPicture !== undefined) {
@@ -111,7 +111,7 @@ function modalConstructor (event) {
             modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZBUNDLE000001";
             break;
     }
-};
+}
 
 
 
