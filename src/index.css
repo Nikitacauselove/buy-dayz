@@ -1,4 +1,21 @@
-*, *::before, *::after {
+@font-face {
+    font-family: 'Metron Book';
+    src: url('fonts/MetronBook.woff2') format('woff2'),
+    url('fonts/MetronBook.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.woff2') format('woff2'),
+    url('fonts/icomoon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+* {
     box-sizing: border-box;
 }
 body {
@@ -8,22 +25,6 @@ body {
     line-height: 1.428571429;
     overflow-x: hidden;
 }
-@font-face {
-    font-family: 'Metron Book';
-    src: url('fonts/MetronBook.woff2') format('woff2'),
-         url('fonts/MetronBook.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
-@font-face {
-    font-family: 'icomoon';
-    src: url('fonts/icomoon.woff2') format('woff2'),
-         url('fonts/icomoon.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
 
 
 /*                  Header                  */
@@ -31,8 +32,8 @@ body {
 .header-background-container {
     background-image: url("images/Header container.webp");
     background-position: top;
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
     padding: 60px 0;
     position: relative;
     width: 100%;
@@ -1059,7 +1060,3 @@ body {
         content: none;
     }
 }
-
-
-
-
