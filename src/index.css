@@ -1,18 +1,16 @@
 @font-face {
-    font-family: 'Metron Book';
-    src: url('fonts/MetronBook.woff2') format('woff2'),
-    url('fonts/MetronBook.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
     font-display: block;
+    font-family: 'Metron Book';
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/MetronBook.woff2) format('woff2');
 }
 @font-face {
     font-family: 'icomoon';
-    src: url('fonts/icomoon.woff2') format('woff2'),
-    url('fonts/icomoon.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
     font-display: block;
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/icomoon.woff2) format('woff2');
 }
 
 * {
