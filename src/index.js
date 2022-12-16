@@ -6,10 +6,10 @@ const limitHeight = heightCalculating();
 window.onscroll = logoShow;
 
 
-function heightCalculating () {
+function heightCalculating() {
     return document.getElementsByClassName("header-background-container")[0].offsetHeight;
 }
-function logoShow () {
+function logoShow() {
     if (document.documentElement.scrollTop > limitHeight) {
         logo.classList.add("nav__logo_show");
     } else {
@@ -26,7 +26,7 @@ nav.addEventListener("click", sideNavShow);
 window.onresize = widthChange;
 
 
-function sideNavShow (event) {
+function sideNavShow(event) {
     if (event.target.closest(".nav__toggle-button")) {
         document.body.classList.toggle("open-nav");
     } else {
@@ -35,7 +35,7 @@ function sideNavShow (event) {
         }
     }
 }
-function widthChange () {
+function widthChange() {
     if (document.body.classList.contains("open-nav") && document.body.clientWidth > 991) {
         document.body.classList.remove("open-nav");
     }
@@ -68,7 +68,7 @@ const modalLinks = document.getElementsByClassName("modal-article-platform__link
 offer.addEventListener("click", displayModal);
 
 
-function displayModal (event) {
+function displayModal(event) {
     if (event.target.classList.contains("offer-buy-article__button") || event.target.classList.contains("offer-buy__img")) {
         modalConstructor(event);
         modal.classList.add("offer__modal-container_display");
@@ -80,7 +80,7 @@ function displayModal (event) {
         }
     }
 }
-function modalConstructor (event) {
+function modalConstructor(event) {
     let product = event.target.getAttribute("data-product");
     if (lastPicture !== undefined) {
         lastPicture.classList.remove("modal__picture_display");
@@ -112,17 +112,3 @@ function modalConstructor (event) {
             break;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
