@@ -1,19 +1,18 @@
-/*                  Отображение/сокрытие логотипа                  */
-
-const logo = document.getElementsByClassName("nav__logo")[0];
-const limitHeight = heightCalculating();
-
-window.onscroll = logoShow;
+const limitHeight = document.getElementsByClassName("header-background-container")[0].offsetHeight;
+const pageElements = {
+    logo: document.getElementsByClassName("nav__logo")[0]
+};
 
 
-function heightCalculating() {
-    return document.getElementsByClassName("header-background-container")[0].offsetHeight;
-}
-function logoShow() {
+/** Отображение/сокрытие логотипа. */
+
+document.addEventListener("scroll", showLogo);
+
+function showLogo() {
     if (document.documentElement.scrollTop > limitHeight) {
-        logo.classList.add("nav__logo_show");
+        pageElements.logo.classList.add("nav__logo_show");
     } else {
-        logo.classList.remove("nav__logo_show");
+        pageElements.logo.classList.remove("nav__logo_show");
     }
 }
 
