@@ -1,6 +1,7 @@
 const limitHeight = document.getElementsByClassName("header-background-container")[0].offsetHeight;
 const pageElements = {
-    logo: document.getElementsByClassName("nav__logo")[0]
+    logo: document.getElementsByClassName("nav__logo")[0],
+    nav: document.getElementsByClassName("nav")[0]
 };
 
 
@@ -17,15 +18,12 @@ function showLogo() {
 }
 
 
-/*                  Отображение/сокрытие боковой навигации                  */
+/** Отображение/сокрытие боковой навигации. */
 
-const nav = document.getElementsByClassName("nav")[0];
+pageElements.nav.addEventListener("click", showSideNav);
+window.addEventListener("resize", widthChange);
 
-nav.addEventListener("click", sideNavShow);
-window.onresize = widthChange;
-
-
-function sideNavShow(event) {
+function showSideNav(event) {
     if (event.target.closest(".nav__toggle-button")) {
         document.body.classList.toggle("open-nav");
     } else {
