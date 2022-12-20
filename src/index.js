@@ -1,5 +1,7 @@
 const limitHeight = document.getElementsByClassName("header-background-container")[0].offsetHeight;
 const pageElements = {
+    buyingOptions: document.getElementsByClassName("offer-buy")[0],
+    buyingOptionsLink: document.getElementsByClassName("offer-article__link")[0],
     logo: document.getElementsByClassName("nav__logo")[0],
     nav: document.getElementsByClassName("nav")[0]
 };
@@ -39,17 +41,13 @@ function widthChange() {
 }
 
 
-/*                  Scroll при нажатии на ссылку                  */
+/** Прокрутка при нажатии на ссылку. */
 
-const seeBuyingOptions = document.getElementsByClassName("offer-article__link")[0];
-const elementToScroll = document.getElementsByClassName("offer-buy")[0];
-
-seeBuyingOptions.addEventListener("click", scroll);
-
+pageElements.buyingOptionsLink.addEventListener("click", scroll);
 
 function scroll(event) {
     event.preventDefault();
-    window.scrollBy({top: elementToScroll.getBoundingClientRect()["top"]-80, behavior: "smooth"});
+    window.scrollBy({behavior: "smooth", top: pageElements.buyingOptions.getBoundingClientRect()["top"] - 80});
 }
 
 
