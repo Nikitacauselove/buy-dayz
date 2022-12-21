@@ -1,9 +1,14 @@
-const limitHeight = document.getElementsByClassName("header-background-container")[0].offsetHeight;
+const limitHeight = document.querySelector(".header-background-container").offsetHeight;
 const pageElements = {
-    buyingOptions: document.getElementsByClassName("offer-buy")[0],
-    buyingOptionsLink: document.getElementsByClassName("offer-article__link")[0],
-    logo: document.getElementsByClassName("nav__logo")[0],
-    nav: document.getElementsByClassName("nav")[0]
+    buyingOptions: document.querySelector(".offer-buy"),
+    buyingOptionsLink: document.querySelector(".offer-article__link"),
+    logo: document.querySelector(".nav__logo"),
+    modal: document.querySelector(".offer__modal-container"),
+    modalLinks: document.querySelectorAll(".modal-article-platform__link"),
+    modalPictures: document.querySelectorAll(".modal__picture"),
+    modalTitle: document.querySelector(".modal-article__title"),
+    nav: document.querySelector(".nav"),
+    offer: document.querySelector(".offer")
 };
 
 
@@ -51,28 +56,20 @@ function scroll(event) {
 }
 
 
-/*                  Отображение/сокрытие модального окна                  */
+/** Отображение/сокрытие модального окна. */
 
-const modal = document.getElementsByClassName("offer__modal-container")[0];
-const offer = document.getElementsByClassName("offer")[0];
-const modalPictures = document.getElementsByClassName("modal__picture");
 let lastPicture = undefined;
-const modalTitle = document.getElementsByClassName("modal-article__title")[0];
-const modalLinks = document.getElementsByClassName("modal-article-platform__link");
 
-offer.addEventListener("click", displayModal);
+pageElements.offer.addEventListener("click", showOrHideModal);
 
-
-function displayModal(event) {
+function showOrHideModal(event) {
     if (event.target.classList.contains("offer-buy-article__button") || event.target.classList.contains("offer-buy__img")) {
         modalConstructor(event);
-        modal.classList.add("offer__modal-container_display");
+        pageElements.modal.classList.add("offer__modal-container_display");
         document.documentElement.style.overflow = "hidden";
-    } else {
-        if (event.target.closest(".modal__close-button") || event.target.classList.contains("offer__modal-mask")) {
-            modal.classList.remove("offer__modal-container_display");
-            document.documentElement.style.overflow = "";
-        }
+    } else if (event.target.closest(".modal__close-button") || event.target.classList.contains("offer__modal-mask")) {
+        pageElements.modal.classList.remove("offer__modal-container_display");
+        document.documentElement.style.overflow = "";
     }
 }
 function modalConstructor(event) {
@@ -82,28 +79,28 @@ function modalConstructor(event) {
     }
     switch (product) {
         case "DayZ":
-            lastPicture = modalPictures[0];
-            modalPictures[0].classList.add("modal__picture_display");
-            modalTitle.textContent = "Купить DayZ";
-            modalLinks[0].href = "https://store.steampowered.com/app/221100/DayZ/";
-            modalLinks[1].href = "https://www.microsoft.com/store/apps/BSR9NLHVF1KL";
-            modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZ000000000001";
+            lastPicture = pageElements.modalPictures[0];
+            pageElements.modalPictures[0].classList.add("modal__picture_display");
+            pageElements.modalTitle.textContent = "Купить DayZ";
+            pageElements.modalLinks[0].href = "https://store.steampowered.com/app/221100/DayZ/";
+            pageElements.modalLinks[1].href = "https://www.microsoft.com/store/apps/BSR9NLHVF1KL";
+            pageElements.modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZ000000000001";
             break;
         case "DayZ Livonia":
-            lastPicture = modalPictures[1];
-            modalPictures[1].classList.add("modal__picture_display");
-            modalTitle.textContent = "Купить DayZ Livonia";
-            modalLinks[0].href = "https://store.steampowered.com/app/1151700";
-            modalLinks[1].href = "https://www.microsoft.com/store/productid/9nrwmzz3h1ct";
-            modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZDLC000000001";
+            lastPicture = pageElements.modalPictures[1];
+            pageElements.modalPictures[1].classList.add("modal__picture_display");
+            pageElements.modalTitle.textContent = "Купить DayZ Livonia";
+            pageElements.modalLinks[0].href = "https://store.steampowered.com/app/1151700";
+            pageElements.modalLinks[1].href = "https://www.microsoft.com/store/productid/9nrwmzz3h1ct";
+            pageElements.modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZDLC000000001";
             break;
         case "DayZ Livonia Edition":
-            lastPicture = modalPictures[2];
-            modalPictures[2].classList.add("modal__picture_display");
-            modalTitle.textContent = "Купить DayZ Livonia Edition";
-            modalLinks[0].href = "https://store.steampowered.com/bundle/12620";
-            modalLinks[1].href = "https://www.microsoft.com/store/productid/9pbkvh4mh33g";
-            modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZBUNDLE000001";
+            lastPicture = pageElements.modalPictures[2];
+            pageElements.modalPictures[2].classList.add("modal__picture_display");
+            pageElements.modalTitle.textContent = "Купить DayZ Livonia Edition";
+            pageElements.modalLinks[0].href = "https://store.steampowered.com/bundle/12620";
+            pageElements.modalLinks[1].href = "https://www.microsoft.com/store/productid/9pbkvh4mh33g";
+            pageElements.modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZBUNDLE000001";
             break;
     }
 }
