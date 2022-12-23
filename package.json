@@ -4,5 +4,8 @@
   "private": true,
   "dependencies": {
     "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "grunt-cli": "^1.4.3"
   }
 }
