@@ -6,6 +6,9 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "grunt-cli": "^1.4.3"
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^5.2.2"
   }
 }
