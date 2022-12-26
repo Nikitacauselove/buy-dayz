@@ -1,15 +1,6 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        concat: {
-            options: {
-                separator: '\n'
-            },
-            dest: {
-                src: ['node_modules/normalize.css/normalize.css', 'src/index.css'],
-                dest: 'build/main.css'
-            }
-        },
         copy: {
             main: {
                 src: 'src/index.html',
@@ -36,9 +27,8 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['concat', 'copy', 'uglify']);
+    grunt.registerTask('default', ['copy', 'uglify']);
 };
