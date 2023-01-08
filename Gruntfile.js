@@ -7,10 +7,14 @@ module.exports = function(grunt) {
                 dest: 'build/main.html',
                 options: {
                     process: function (content) {
-                        content = content.replace("<link rel=\"stylesheet\" href=\"../node_modules/normalize.css/normalize.css\">", "");
-                        content = content.replace("<link rel=\"stylesheet\" href=\"index.css\">", "<link rel=\"stylesheet\" href=\"main.css\">");
-                        content = content.replace("<script src=\"index.js\"></script>", "<script src=\"main.js\"></script>");
-                        return content;
+                        const result = content
+                            .replace('<link rel="stylesheet" href="index.css">', '<link rel="stylesheet" href="main.css">')
+                            .replace('<script src="index.js"></script>', '<script src="main.js"></script>');
+
+                        return result
+                            .split(/\r?\n/)
+                            .filter(line => !line.includes('<link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">'))
+                            .join('\n');
                     }
                 }
             },
