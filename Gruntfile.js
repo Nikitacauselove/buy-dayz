@@ -6,7 +6,7 @@ module.exports = function(grunt) {
                 src: 'src/index.html',
                 dest: 'build/main.html',
                 options: {
-                    process: function (content) {
+                    process: function(content) {
                         const result = content
                             .replace('<link rel="stylesheet" href="index.css">', '<link rel="stylesheet" href="main.css">')
                             .replace('<script src="index.js"></script>', '<script src="main.js"></script>');
