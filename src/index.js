@@ -84,7 +84,7 @@ function modalConstructor(event) {
             pageElements.modalTitle.textContent = "Купить DayZ";
             pageElements.modalLinks[0].href = "https://store.steampowered.com/app/221100/DayZ/";
             pageElements.modalLinks[1].href = "https://www.microsoft.com/store/apps/BSR9NLHVF1KL";
-            pageElements.modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZ000000000001";
+            pageElements.modalLinks[2].href = "https://store.playstation.com/product/EP2601-CUSA05645_00-DAYZ000000000001";
             break;
         case "DayZ Livonia":
             lastPicture = pageElements.modalPictures[1];
@@ -92,7 +92,7 @@ function modalConstructor(event) {
             pageElements.modalTitle.textContent = "Купить DayZ Livonia";
             pageElements.modalLinks[0].href = "https://store.steampowered.com/app/1151700";
             pageElements.modalLinks[1].href = "https://www.microsoft.com/store/productid/9nrwmzz3h1ct";
-            pageElements.modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZDLC000000001";
+            pageElements.modalLinks[2].href = "https://store.playstation.com/product/EP2601-CUSA05645_00-DAYZDLC000000001";
             break;
         case "DayZ Livonia Edition":
             lastPicture = pageElements.modalPictures[2];
@@ -100,7 +100,7 @@ function modalConstructor(event) {
             pageElements.modalTitle.textContent = "Купить DayZ Livonia Edition";
             pageElements.modalLinks[0].href = "https://store.steampowered.com/bundle/12620";
             pageElements.modalLinks[1].href = "https://www.microsoft.com/store/productid/9pbkvh4mh33g";
-            pageElements.modalLinks[2].href = "https://store.sonyentertainmentnetwork.com/#!/cid=EP2601-CUSA05645_00-DAYZBUNDLE000001";
+            pageElements.modalLinks[2].href = "https://store.playstation.com/product/EP2601-CUSA05645_00-DAYZBUNDLE000001";
             break;
     }
 }
