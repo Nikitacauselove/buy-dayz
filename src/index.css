@@ -229,13 +229,8 @@ body {
 .nav-list__link-buy:hover {
     background-color: #fb0005;
 }
-.nav__login {
-    display: none;
-    margin: 35px 0;
-}
 
 .social-list {
-    border-top: 1px solid #c80004;
     display: none;
     margin-bottom: 0;
     margin-left: 0;
@@ -368,9 +363,6 @@ body {
 }
 .open-nav .nav__inner-container {
     pointer-events: auto;
-}
-.open-nav .nav__login {
-    display: block;
 }
 .open-nav .social-list {
     display: block;
