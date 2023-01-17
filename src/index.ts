@@ -1,10 +1,10 @@
-const limitHeight = document.querySelector(".header-background-container").offsetHeight;
+const limitHeight = document.querySelector<HTMLElement>(".header-background-container").offsetHeight;
 const pageElements = {
     buyingOptions: document.querySelector(".offer-buy"),
     buyingOptionsLink: document.querySelector(".offer-article__link"),
     logo: document.querySelector(".nav__logo"),
     modal: document.querySelector(".offer__modal-container"),
-    modalLinks: document.querySelectorAll(".modal-article-platform__link"),
+    modalLinks: document.querySelectorAll<HTMLAnchorElement>(".modal-article-platform__link"),
     modalPictures: document.querySelectorAll(".modal__picture"),
     modalTitle: document.querySelector(".modal-article__title"),
     nav: document.querySelector(".nav"),
