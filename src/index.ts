@@ -1,4 +1,4 @@
-const limitHeight = document.querySelector<HTMLElement>(".header-background-container")!.offsetHeight;
+const headerHeight: number = document.querySelector<HTMLElement>(".header-background-container")!.offsetHeight;
 const pageElements = {
     buyingOptions: document.querySelector<HTMLElement>(".offer-buy"),
     buyingOptionsLink: document.querySelector<HTMLElement>(".offer-article__link"),
@@ -16,8 +16,8 @@ const pageElements = {
 
 document.addEventListener("scroll", showLogo);
 
-function showLogo() {
-    if (document.documentElement.scrollTop > limitHeight) {
+function showLogo(): void {
+    if (headerHeight < document.documentElement.scrollTop) {
         pageElements.logo!.classList.add("nav__logo_show");
     } else {
         pageElements.logo!.classList.remove("nav__logo_show");
@@ -27,18 +27,18 @@ function showLogo() {
 
 /** Отображение/сокрытие боковой навигации. */
 
-pageElements.nav!.addEventListener("click", showSideNav);
-window.addEventListener("resize", widthChange);
+pageElements.nav!.addEventListener("click", showSideNavigation);
+window.addEventListener("resize", hideSideNavigation);
 
-function showSideNav(event: Event) {
+function showSideNavigation(event: Event): void {
     if ((event.target as HTMLElement).closest(".nav__toggle-button")) {
         document.body.classList.toggle("open-nav");
     } else if ((event.target as HTMLElement).closest(".nav__close-button")) {
         document.body.classList.remove("open-nav");
     }
 }
-function widthChange() {
-    if (document.body.classList.contains("open-nav") && document.body.clientWidth > 991) {
+function hideSideNavigation(): void {
+    if (document.body.classList.contains("open-nav") && window.matchMedia('(min-width: 992px)').matches) {
         document.body.classList.remove("open-nav");
     }
 }
@@ -48,9 +48,9 @@ function widthChange() {
 
 pageElements.buyingOptionsLink!.addEventListener("click", scrollToBuyingOptions);
 
-function scrollToBuyingOptions(event: Event) {
+function scrollToBuyingOptions(event: Event): void {
     event.preventDefault();
-    window.scrollBy({behavior: "smooth", top: pageElements.buyingOptions!.getBoundingClientRect()["top"] - 80});
+    window.scrollBy({behavior: "smooth", top: pageElements.buyingOptions!.getBoundingClientRect().top - 80});
 }
 
 
