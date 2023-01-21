@@ -60,18 +60,18 @@ let lastPicture: HTMLElement = pageElements.modalPictures[0];
 
 pageElements.offer!.addEventListener("click", showOrHideModal);
 
-function showOrHideModal(event: Event) {
+function showOrHideModal(event: Event): void {
     if ((event.target as HTMLElement).classList.contains("offer-buy-article__button") || (event.target as HTMLElement).classList.contains("offer-buy__img")) {
-        modalConstructor(event);
+        buildModal(event.target as HTMLElement);
         pageElements.modal!.classList.add("offer__modal-container_display");
-        document.documentElement.style.overflow = "hidden";
+        document.documentElement.setAttribute("style", "overflow: hidden");
     } else if ((event.target as HTMLElement).closest(".modal__close-button") || (event.target as HTMLElement).classList.contains("offer__modal-mask")) {
         pageElements.modal!.classList.remove("offer__modal-container_display");
-        document.documentElement.style.overflow = "";
+        document.documentElement.removeAttribute("style");
     }
 }
-function modalConstructor(event: Event) {
-    let product = (event.target as HTMLElement).getAttribute("data-product");
+function buildModal(target: HTMLElement): void {
+    const product: string | null = target.getAttribute("data-product");
 
     lastPicture.classList.remove("modal__picture_display");
     switch (product) {
