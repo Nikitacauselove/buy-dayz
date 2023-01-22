@@ -728,14 +728,11 @@ body {
     flex-direction: column;
     padding-right: 50px;
 }
-.modal__picture {
+.modal__img {
     display: none;
 }
-.modal__picture_display {
+.modal__img_display {
     display: block;
-}
-.modal__img {
-    vertical-align: middle;
 }
 
 .modal-article {

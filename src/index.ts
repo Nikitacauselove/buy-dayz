@@ -4,8 +4,8 @@ const pageElements = {
     buyingOptionsLink: document.querySelector<HTMLElement>(".offer-article__link"),
     logo: document.querySelector<HTMLElement>(".nav__logo"),
     modal: document.querySelector<HTMLElement>(".offer__modal-container"),
+    modalImages: document.querySelectorAll<HTMLElement>(".modal__img"),
     modalLinks: document.querySelectorAll<HTMLAnchorElement>(".modal-article-platform__link"),
-    modalPictures: document.querySelectorAll<HTMLElement>(".modal__picture"),
     modalTitle: document.querySelector<HTMLElement>(".modal-article__title"),
     nav: document.querySelector<HTMLElement>(".nav"),
     offer: document.querySelector<HTMLElement>(".offer")
@@ -56,7 +56,7 @@ function scrollToBuyingOptions(event: Event): void {
 
 /** Отображение/сокрытие модального окна. */
 
-let lastPicture: HTMLElement = pageElements.modalPictures[0];
+let lastDisplayedModalImage: HTMLElement = pageElements.modalImages[0];
 
 pageElements.offer!.addEventListener("click", showOrHideModal);
 
@@ -73,27 +73,27 @@ function showOrHideModal(event: Event): void {
 function buildModal(target: HTMLElement): void {
     const product: string | null = target.getAttribute("data-product");
 
-    lastPicture.classList.remove("modal__picture_display");
+    lastDisplayedModalImage.classList.remove("modal__img_display");
     switch (product) {
         case "DayZ":
-            lastPicture = pageElements.modalPictures[0];
-            pageElements.modalPictures[0].classList.add("modal__picture_display");
+            lastDisplayedModalImage = pageElements.modalImages[0];
+            pageElements.modalImages[0].classList.add("modal__img_display");
             pageElements.modalTitle!.textContent = "Купить DayZ";
             pageElements.modalLinks[0].href = "https://store.steampowered.com/app/221100/DayZ/";
             pageElements.modalLinks[1].href = "https://www.microsoft.com/store/apps/BSR9NLHVF1KL";
             pageElements.modalLinks[2].href = "https://store.playstation.com/product/EP2601-CUSA05645_00-DAYZ000000000001";
             break;
         case "DayZ Livonia":
-            lastPicture = pageElements.modalPictures[1];
-            pageElements.modalPictures[1].classList.add("modal__picture_display");
+            lastDisplayedModalImage = pageElements.modalImages[1];
+            pageElements.modalImages[1].classList.add("modal__img_display");
             pageElements.modalTitle!.textContent = "Купить DayZ Livonia";
             pageElements.modalLinks[0].href = "https://store.steampowered.com/app/1151700";
             pageElements.modalLinks[1].href = "https://www.microsoft.com/store/productid/9nrwmzz3h1ct";
             pageElements.modalLinks[2].href = "https://store.playstation.com/product/EP2601-CUSA05645_00-DAYZDLC000000001";
             break;
         case "DayZ Livonia Edition":
-            lastPicture = pageElements.modalPictures[2];
-            pageElements.modalPictures[2].classList.add("modal__picture_display");
+            lastDisplayedModalImage = pageElements.modalImages[2];
+            pageElements.modalImages[2].classList.add("modal__img_display");
             pageElements.modalTitle!.textContent = "Купить DayZ Livonia Edition";
             pageElements.modalLinks[0].href = "https://store.steampowered.com/bundle/12620";
             pageElements.modalLinks[1].href = "https://www.microsoft.com/store/productid/9pbkvh4mh33g";
