@@ -4,14 +4,10 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 src: 'src/index.html',
-                dest: 'build/main.html',
+                dest: 'build/',
                 options: {
                     process: function(content) {
-                        const result = content
-                            .replace('<link rel="stylesheet" href="index.css">', '<link rel="stylesheet" href="main.css">')
-                            .replace('<script src="index.js"></script>', '<script src="main.js"></script>');
-
-                        return result
+                        return content
                             .split(/\r?\n/)
                             .filter(line => !line.includes('<link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">'))
                             .join('\n');
@@ -35,14 +31,14 @@ module.exports = function(grunt) {
             target: {
                 files: [{
                     src: ['node_modules/normalize.css/normalize.css', 'src/index.css'],
-                    dest: 'build/main.css',
+                    dest: 'build/index.css',
                 }]
             }
         },
         uglify: {
             build: {
                 src: 'src/index.js',
-                dest: 'build/main.js'
+                dest: 'build/index.js'
             }
         }
     });
