@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 src: 'src/index.html',
-                dest: 'build/',
+                dest: 'build/index.html',
                 options: {
                     process: function(content) {
                         return content
