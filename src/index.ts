@@ -38,7 +38,7 @@ function showSideNavigation(event: Event): void {
     }
 }
 function hideSideNavigation(): void {
-    if (document.body.classList.contains("open-nav") && window.matchMedia('(min-width: 992px)').matches) {
+    if (document.body.classList.contains("open-nav") && window.matchMedia("(min-width: 992px)").matches) {
         document.body.classList.remove("open-nav");
     }
 }
